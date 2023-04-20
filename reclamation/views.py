@@ -121,3 +121,6 @@ def get_reclamation(request):
             return render(request, 'index-suivi1.html', {'error_msg': error_msg})
     return render(request,'index-suivi1.html')
 
+
+def view_home(request):
+    return render (request,'index-home.html')
