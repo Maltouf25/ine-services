@@ -5,7 +5,7 @@ from .views import view_form,view_reclamation ,view_reclamation_suivi,view_form_
 urlpatterns = [
     path("form",view_form),
     path('data/',view_reclamation),
-    path('home/',view_home)
+    path('',view_home)
      
      
 ]
