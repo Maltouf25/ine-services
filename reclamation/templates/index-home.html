@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="..\static\styles.css">
+    <link rel="stylesheet" href="..\static\button_animated.css">
+</head>
+<body>
+<section class="header">
+    <nav>
+        <div class="nav-links">
+            <ul>
+                <li><a href="index-home.html">Accueil</a></li>
+                <li><a href="#infos">Informations</a></li>
+            </ul>
+        </div>
+        <a href="index-home.html"><img src="..\static\logo.png" ></a>
+    </nav>
+<div class="main-box">
+    <h1>Par les ines.Pour les ines</h1>
+    <p>Réclamer en ligne tout problème technique que vous rencontrez à l'INPT.</p>
+    <br>
+<ul class="nav-buttons">
+        <li><a href="#recl">Effectuer une réclamation</a></li>
+        <li><a href="#suivi">Suivre une réclamation</a></li>
+        <li><a href="#infos">Informations sur le site</a></li>
+    </ul>
+</div> 
+<!-------------------------reclamation----------------------->
+</section>
+<section class="reclamation">
+      <h1>Choisir le type de service</h1>
+      <p>veuiller cliquer sur l'icone ci-dessous correspondante au service désiré.</p>
+      <div class="row">
+        <div class="reclam-col" id="recl">
+            <h3><U>Déposer une réclamation</U></h3>
+            <p>Si vous avez rencontré un problème lors de l'utilisation d'un service d'internat ou autres, vous pouvez déposer une réclamation par ici.</p>
+            <a href="http://127.0.0.1:8000/"><button  class="button" style="vertical-align:middle">
+                <span>Accéder </span></button></a>     
+       </div>
+        <div class="reclam-col" id="suivi">
+            <h3><U>Suivre votre réclamation</U></h3>
+            <p>Pour suivre l'état d'avancement d'une précédente réclamation, cliquez sur le bouton ci-dessous..</p>
+            <a href="http://127.0.0.1:8000/suivi/"><button  class="button" style="vertical-align:middle">
+                <span>Accéder </span></button></a> 
+        </div>
+        <div class="reclam-col" id="infos">
+            <h3><U>Informations</U></h3>
+            <p>cliquer pour voir des informations sur ce site web ainsi que ses services.</p>
+            <button  id="button_hide" class="button" style="vertical-align:middle">
+                <span>Accéder </span></button> 
+        </div>
+      </div>
+      <div id="info" class="hide"><p><h3>informations:</h3><br> -Ce site web sert d'intérmaidiaire entre les étudiants de l'inpt qui rencontre
+        des problèmes au quotidien et entre les equipes de réparation.   
+        <br> <br> -Le site web permet de digitaliser l'action de reclamation ce qui permet plus de facilité et d'éfficacité.
+        <br><br> -La plateforme offre un service de réclamation qui se base sur le remplissage d'un fromulaire concernant le problème rencontré.
+        <br><br> -Le suivi de la réclamation est possible en entrant l'identifiant obtenu après le dépot de la réclamation. 
+        <br><br>
+       
+     </div>
+</section>
+<section><footer><p>@This web-site was made by Amoa-ine1 student</footer></section>
+<script src="../static/info.js"></script>
+</body>
+</html>

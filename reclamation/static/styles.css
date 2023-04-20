@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.header{
+    min-height: 100vh;
+    width:100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(nadi.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+nav{
+    display: flex;
+    padding-left:5% ;
+    padding-right: 2px;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+nav img{
+    width: 150px;
+}
+.nav-links{
+    flex:1;
+    text-align:left;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding:10px;
+    position:relative; 
+}
+.nav-links ul li a{
+    color:white;
+    text-decoration: none;
+    font-size: 19px;;
+}
+.nav-links ul li::after{
+    content:'';
+    width: 0%;
+    height:3.3px;
+    background: blue;
+    display: block;
+    margin : auto;
+    transition:0.5s;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+.main-box{
+    width: 90%;
+    color: white;
+    position:absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,50%);
+    text-align: center;
+}
+.nav-buttons li{
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+}
+.main-box{
+    height: 20%;
+}
+.main-box h1{
+    font-size:62px;
+}.main-box p{
+    font-size :15px;
+    
+}
+.nav-buttons a{
+    display: inline-block;
+    text-decoration: none;
+    color:white;
+    border: 1px solid white;
+    padding:12px 34px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    
+}
+.nav-buttons a:hover{
+    border : 1px solid rgb(40, 40, 255);
+    transition: 0.5s;
+}
+.reclamation{
+    width:80%;
+    margin:auto;
+    text-align: center ;
+    padding-top:100px;
+}
+.row{
+    margin-top: 5%;
+    display:flex;
+    justify-content: space-between;
+}
+.reclam-col{
+    flex-basis: 31%;
+    width: 40px;
+    padding: 15px;
+    background-color: #d3ecf3;
+    border-radius:10px ;
+    margin-bottom: 40px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    box-shadow: 20px black;
+    transition: 0.5s;
+}
+footer{
+    background-color: black;
+    color: white;
+    padding-left:73% ;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+.reclam-col:hover{
+    box-shadow: 0 0 20px  rgba(0,0,0,0.5);
+}
+#info{
+    text-align: left;
+    margin-left: 0%;
+    position: relative;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+
+
+
+@media (max-width:800px) {
+.main-box h1{
+    font-size:25px;
+}
+.main-box p{
+    font-size :10px;
+    
+}
+.main-box{
+    height: 10%;
+}
+.nav-buttons a{
+    width: 300px;
+    padding:6px 17px;
+}
+.row{
+    flex-direction: column;
+}
+.reclam-col{
+
+    width: auto;
+}
+footer{
+    padding-left: 10%;
+}
+.container{
+    height: 10%
+}
+.body{
+    height: 100%;
+}
+}

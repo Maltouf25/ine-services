@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static%}
+    <link rel="stylesheet" href= "{%static 'styles-data.css' %}">
+    <link rel="stylesheet" href= "{%static 'button_data.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="http://127.0.0.1:5500/reclamation/templates/index-home.html">Accueil</a></li>
+                    <li><a href="http://127.0.0.1:5500/reclamation/templates/index-home.html">Informations</a></li>
+                </ul>
+            </div>
+            {% load static%}
+            <a href="index-form.html"><img src="{%static 'logo.png' %}" ></a>
+        </nav>
+        <div class="container">
+            <div class="title">Réclamations</div>
+            <br>
+                <div class="content">            
+    {% for x in recl %}
+    
+    <div class="data">
+    <ul >
+        <strong>{{x}}</strong>
+        <li>Nom_complet: {{ x.Nom_complet}} </li>
+        <li>Numéro_de_Téléphone: 0{{ x.Numéro_de_Téléphone}} </li>
+        <li>Lieu_concerné: {{ x.Lieu_concerné}} </li>
+        <li>Numéro_de_chambre :{{ x.Numéro_de_chambre}} </li>
+        <li>Description: {{ x.Description}} </li>
+        <li>Piece jointe :{{ x.Pièce_jointe}}  </li>
+        <li>time : {{x.time}}</li>
+        
+        <div class="button_container">
+        <form method="post" action="{% url 'update_database_traitement'  %}">
+            {% csrf_token %}
+            <input type="hidden" name="object_id" value="{{ x.id }}">
+            <button  id="button_hide" class="button1 {% if x.traitement %}traitement_true{% else %}traitement_false{% endif %} " style="vertical-align:middle"  >
+                <span>{% if x.traitement %}En traitement{% else %}Traiter{% endif %} </span></button>
+        </form>
+        <form method="post" action="{% url 'update_database_reparer'  %}">
+            {% csrf_token %}
+            <input type="hidden" name="object_id" value="{{ x.id }}">
+            <button  id="button_hide" class="button1  {% if x.reparer %}reparer_true{% else %}reparer_false{% endif %}" style="vertical-align:middle" >
+                <span> {% if x.reparer %}En réparation{% else %}Réparer{% endif %}</span></button>
+        </form>
+        <form method="post" action="{% url 'update_database_fin'   %}">
+            {% csrf_token %}
+            <input type="hidden" name="object_id" value="{{ x.id }}">
+            <button  id="button_hide" class="button1 {% if x.terminer %}terminer_true{% else %}terminer_false{% endif %}" style="vertical-align:middle" >
+                <span> {% if x.terminer %}Réglée{% else %}Terminer{% endif %}</span></button>
+        </form>
+    </div>
+    </ul>   
+        </div>
+    {% endfor %}
+    </div>
+            </div>
+            </div>
+</body>
+{% load static%}
+<script src=" {%static 'button.js' %}"></script>
+    </html>

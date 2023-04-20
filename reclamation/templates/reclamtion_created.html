@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static%}
+    <link rel="stylesheet" href= "{%static 'styles-suivi.css' %}">
+    
+</head>
+<body>
+    <section class="header">
+    <nav>
+        <div class="nav-links">
+            <ul>
+                <li><a href="http://127.0.0.1:5500/reclamation/templates/index-home.html">Accueil</a></li>
+                <li><a href="http://127.0.0.1:5500/reclamation/templates/index-home.html">Informations</a></li>
+            </ul>
+        </div>
+        {% load static%} 
+        <a href="http://127.0.0.1:5500/reclamation/templates/index-home.html"><img src="{%static 'logo.png' %}" ></a>
+    </nav>
+    
+    <section>
+        
+        <div class="container">
+            {% if error_msg %}
+            <div class="alert" role="alert">
+                {{ error_msg }}
+            </div>
+            {% endif %}
+            <div class="title">Suivi de réclamation</div>
+            
+            <div class="content">
+                <form method="POST" action="{% url 'get_reclamation' %}">
+                    {% csrf_token %}
+                <div class="user-details">
+                  <div class="input-box">
+                    <h4>Votre Réclamation a été bien reçue.</h4>
+                    <br>
+                    <p>l'identifiant de votre réclamation est  : <strong>{{id}}</strong></p>
+                    <br>
+                    <p>Vous pouvez utiliser cet ID pour suivre votre réclamation.</p>
+                  </div>
+                  <br>
+                  </div>
+                </div>
+                <br>
+              </form>
+            </div>
+          </div>
+    
+    </section>
+    
+   
+   
+</body>
+</html>
