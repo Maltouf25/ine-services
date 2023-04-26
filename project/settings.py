@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-*6db6qcgn!)uf_o@^12ftjwfo+*s_1tsw536i02cf95j!r_^cx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app','.now.sh']
+ALLOWED_HOSTS = ['.vercel.app','.now.sh','127.0.0.1']
 
 
 # Application definition
@@ -53,7 +53,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "project.urls"
-CORS_ORIGIN_WHITELIST = [    'http://127.0.0.1:8000',]
+CORS_ORIGIN_WHITELIST = [ 'http://127.0.0.1:8000',]
 
 TEMPLATES = [
     {
@@ -78,9 +78,13 @@ WSGI_APPLICATION = "project.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'reclamation',
+        'USER': 'root',
+        'PASSWORD': 'nizar',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
