@@ -27,3 +27,4 @@ virtualenv==20.21.0
 virtualenv-clone==0.5.7
 virtualenvwrapper-win==1.2.7
 winotify==1.1.0
+mysqlclient==2.1.0
