@@ -1,3 +1,3 @@
-#build_files.sh
+# build_files.sh
 pip install -r requirements.txt
-pythonPython3.11.2 manage.py collectstatic
+python3.9 manage.py collectstatic
